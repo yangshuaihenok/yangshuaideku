@@ -1,0 +1,160 @@
+*{
+    margin: 0;padding: 0;
+}
+ul,ol{
+    list-style: none;
+}
+body{
+    font-size: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-tab-heightlight-color:rgba(0,0,0,0);
+    -ms-tab-heightlight-color:rgba(0,0,0,0);
+    tab-heightlight-color:rgba(0,0,0,0);
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden; /*只显示当前一面 后面的面隐藏*/
+    /* backface-visibility: hidden; */
+}
+img{
+    display: inline-block;
+
+}
+.f12{
+    font-size: 12px;
+}
+.fr{
+    float: right;
+}
+.fl{
+    float: left;
+}
+.cf::after{      /*用伪类通过调用来清除浮动*/
+    content:'';
+    display: block;
+    clear: both;
+}
+.perspecpive{
+    height: 100%;
+    margin: 0 auto;
+}
+.load{
+    position: absolute;  /*绝对定位 父父类中有相对定位 所以位置是以body为基准的*/
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: lightgreen;
+    z-index: 1000;
+    display: none;
+}
+.loadImg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -50px 0 0 -50px;/*把自身向上 左移动50像素*/
+    /* transform: translate3d(-50%, -50%, 0);  */
+    height: 100px;width: 100px;
+}
+.loadTxt{
+    width: 100px;
+    height: 50px;
+    margin: 0 auto;
+    line-height: 50px;
+    text-align: center;
+    color:yellow;
+    font-size: 25px;
+    font-family: Impact,Georgia, 'Times New Roman', Times, serif;
+
+}
+.circle{
+    background-color: rgba(0,0,0,0);
+    border: 5px solid rgba(251,241,107,0.9);
+    opacity: 0.9;
+    border-right-color: rgba(0,0,0,0);
+    border-left-color: rgba(0,0,0,0);
+    -webkit-box-shadow: 0 0 30px #fbf49a;
+    -ms-box-shadow: 0 0 30px #fbf49a;
+    box-shadow: 0 0 30px #fbf49a;/* x轴 y轴 z轴 颜色*/
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0 auto;
+    animation: spinPluse 1s infinite;
+}
+@keyframes spinPluse{
+    0%{
+        transform: rotate(160deg);
+        opacity: 0;
+        box-shadow: 0 0 1px #2187e7;
+    }
+    50%{
+        transform: rotate(145deg);
+        opacity: 1;
+    }
+    100%{
+        transform: rotate(-320deg);
+        opacity: 0;
+    }
+}
+.circle1{
+    background-color: rgba(0,0,0,0);
+    border: 5px solid rgba(251,241,107,1);
+    opacity: 0.9;
+    border-right-color: rgba(0,0,0,0);
+    border-left-color: rgba(0,0,0,0);
+    -webkit-box-shadow: 0 0 15px #fbf49a;
+    -ms-box-shadow: 0 0 15px #fbf49a;
+    box-shadow: 0 0 15px #fbf49a;/* x轴 y轴 z轴 颜色*/
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+    top: -50px;
+    animation: spinPluse1 1s infinite;
+}
+@keyframes spinPluse1{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+/* 首页 */
+.global{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;/* 主屏背部不可见 只显示一屏*/
+    transform-style: preserve-3d;/*动画执行的风格*/
+}
+.screen{
+    transform-style: preserve-3d;
+}
+.ease{
+    transition: all 1s ease-in-out;
+}
+.animated{
+    animation-duration: 1s;/**/
+    animation-fill-mode: both;
+}
+.layer{
+    position: relative;
+    overflow: hidden;
+}
+.global,.screen,.layer{
+    z-index: 1;
+}
+.layer1{
+    position: relative;
+    background: url('http://mat1.gtimg.com/sports/worldcup2014/match/page_1.jpg')top center no-repeat;/*X轴居上 Y轴居中 不平铺*/
+    background-size: cover;
+}
+.layer1 .inner{
+
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>送花</title>
+</head>
+<body>
+    <script>
+    const ys={
+        name:"yangshuai",
+        homedown:"上饶",
+        single:false,
+        room:"1308",
+    }
+    const yys={
+        name:"yyyyysssss",
+        homedown:"广丰",
+        single:true,
+        hobbies:["王者","听歌"],
+        yz:90,
+        //target  参数
+        send_flower(target){
+            target.receiveflower(yys);              
+        }
+    };
+    const xwt={
+        name:"徐文涛",
+        receiveflower(sender){
+            console.log("收到了花");//行为
+            if(sender.yz<90){
+                console.log("你是个好人");   
+            }
+            else{
+                console.log("你真好");
+            }
+        },
+        listengoodmood(fn){
+            console.log("心情不好");
+            setTimeout(function(){
+                yys.yz=95;
+                console.log("心情挺好的");
+                fn();
+            },3000);
+            
+        }
+    }
+    const xh={
+        name:"小红",
+        homedown:"江西",
+        sex:"女",
+        receiveflower(yys){
+            xwt.listengoodmood(function(){
+               // sender.send_flower(xwt);
+                xwt.receiveflower(yys);
+            });
+            // if(send_name==="yys"){
+            //     console.log("在一起吧");
+            // }
+            // else{
+            //     console.log("就这样吧");
+            // }
+        }
+
+    }
+    
+    </script>
+</body>
+</html>

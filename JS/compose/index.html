@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const multiply = (x,y) => x*y;
+        const add5 = (x) => x+5;
+
+        const res1 = multiply(2,5);
+        const res2 = add5(res1);
+        // console.log(res2);
+        // reduce(); API
+        const arr = [1,2,3,4,5];
+        const sum = arr.reduce((pre,next)=>{
+            console.log(pre,next);//只输出了 1 2 ，345显示了未定义
+            // 第一次pre 了第一项  next 第二项
+            // 第二次以及以后  pre依赖上一次的返回结果
+            // return next;pre变成了next 可以输出数组所有
+            return next + pre;
+        })
+        console.log(sum);//输出arr 数组元素的和
+        const compose = function(...fns){
+            // 运行fns需要组合的函数
+            // fns = [add5,add5,multiply]
+            return fns.reduce((prev,next)=>{
+                return (...args) => prev(next(...args))
+                })
+            }
+
+        const multiplyAndadd5 = compose(add5,add5,multiply);
+        console.log(multiplyAndadd5(2,5));
+
+        const arr1 = [1,2,3,4,5,1];
+        // 去除重复数
+        let newarr = arr1.reduce((pre,next)=>{
+            if(!pre.includes(next)){
+                pre.push(next);
+            }
+            return pre;
+        },[]);
+        console.log(newarr);
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button bindtap="showPopup">点我</button>
+  </view>
+  <popup
+   id="popup"
+   title="小弹窗"
+   content="组件思想get了没？"
+   btn_no="no"
+   btn_ok="yes"
+   bind:error="_error"
+   bind:success="_success"
+   >
+   
+  </popup>
+</view>

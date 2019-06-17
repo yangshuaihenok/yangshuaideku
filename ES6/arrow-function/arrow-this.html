@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>this</title>
+</head>
+<body>
+    <script>
+    const lilei={
+        msg:'this is lilei'
+    }
+    const madongmei={
+        msg:'这是马冬梅'
+    }
+    function lileiFunc(){
+        // console.log(this.msg);
+        var arrow_lileiFunc=()=>{
+            console.log(this.msg);
+        }
+        arrow_lileiFunc();
+    }
+    lileiFunc.call(madongmei);
+
+    // var arrow_lileiFunc=()=>{
+    //     console.log(this.msg);
+    // }
+    </script>
+</body>
+</html>

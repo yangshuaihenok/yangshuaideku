@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CAT</title>
+    <style>
+    html ,body{
+      margin: 0;padding: 0;
+    }
+    .cattu{
+        height: 715px;
+        width: 100%;
+        background-color: lightgrey;
+    }
+    .cat {
+    height: 100%;
+    width: 100%;  
+  }
+  .maowei{
+    width: 64px;
+    height: 194px;
+    background-image: url(./maowei.png);
+    position: absolute;
+    top: 12%;
+    left:37%;
+    animation: weiba 3s infinite;
+    transform-origin: 40% 96%;
+  }
+  @keyframes weiba{
+    0%{
+      transform: rotateZ(0);
+    }
+    50%{
+      transform: rotateZ(-10deg);
+    }
+    100%{
+      transform: rotateZ(0deg);
+    }
+  }
+  .maozhua{
+    width: 34px;
+    height: 81px;
+    background-image: url(./maozhua.png);
+    position: absolute;
+    top: 63%;
+    left: 51%;
+    transform-origin: 0% 0%;
+    animation: zhuazi 3.5s infinite;
+  }
+  @keyframes zhuazi{
+    0%{
+      transform: rotateZ(0);
+    }
+    50%{
+      transform: rotateZ(-15deg);
+    }
+    100%{
+      transform: rotateZ(0deg);
+    }
+  }
+  .maoshen{
+    width: 117px;
+    height: 201px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0); 
+    background-image: url(./maoshenti.png ) ;
+    background-repeat:no-repeat; 
+  }
+  .maoyan{
+    width: 3px;
+    height: 3px;
+    position: absolute;
+  }
+  .maoyan1{
+    background-image: url(./maoyan1.png);
+    left: 67%;
+    top: 88%;
+    animation: yanjing1 3s infinite;
+  }
+  @keyframes yanjing1{
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0.8;
+  }
+  70%{
+    opacity: 0.6;
+  }
+  100%{
+    opacity: 0;
+  }
+  }
+  .maoyan2{
+    background-image: url(./maoyan2.png);
+    left: 81%;
+    top: 92%;
+    animation: yanjing2 3s infinite;
+  }
+  @keyframes yanjing2{
+    0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0.8;
+  }
+  70%{
+    opacity: 0.6;
+  }
+  100%{
+    opacity: 0;
+  }
+  }
+  .maozui{
+    width: 4px;
+    height: 3px;
+    background-image: url(./maozui.png);
+    position: absolute;
+    left: 71%;
+    top: 94%;
+  }
+ 
+    </style>
+</head>
+<body>
+   <div class="cattu">
+        <div class="cat">           
+            <div class="maowei"></div>
+            
+            <div class="maozhua"></div>
+            <div class="maoshen">
+              <div class="maoyan maoyan1"></div>
+              <div class="maoyan maoyan2"></div>
+              <div class="maozui"></div>
+          </div>
+        </div>
+   </div>
+</body>
+</html>

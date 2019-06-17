@@ -1,0 +1,77 @@
+<!--pages/mine/mine.wxml-->
+<view class="mine">
+    <view class="header">
+        <open-data type="userAvatarUrl" class="thumb"></open-data>
+        <open-data type="userNickName" lang="zh_CN" class="nickname"></open-data>
+        <view>
+            <text class="header-id">小米ID:00000</text>
+        </view>
+        <text class="about" bindtap="my">我</text>
+        <modal title="我的名片" hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCandel" comfirmText="新名字">
+          <view>
+            <image class="VR-photo" src="/images/erweima.jpg" mode='aspectFill'></image>
+          </view>
+        </modal>
+    </view>
+    <view class="mine-goods">
+        <view class="goods-photo">
+            <image class="goods" src="/images/jingpin.png"></image>
+        </view>
+        <navigator url="">
+            <view class="goods-text">
+                <text>小米精品推荐</text>
+                <text class="goods-text-a">（内测）</text>
+            </view>
+        </navigator>
+    </view>
+    <view class="mine-orders">
+        <view class="orders-photo">
+            <image class="orders" src="/images/dingdan.png"></image>
+        </view>
+        <navigator url="">
+            <view class="orders-text">
+                <text>我的订单</text>
+            </view>
+        </navigator>      
+    </view>
+    <view class="mine-vip">
+        <view class="vip-photo">
+            <image class="vip" src="/images/huiyuan.png"></image>
+        </view>
+        <navigator url="">
+            <view class="vip-text">
+                <text>会员中心</text>
+            </view>
+        </navigator>      
+    </view>
+    <view class="mine-coupons">
+        <view class="coupons-photo">
+            <image class="coupons" src="/images/youhuiquan.png"></image>
+        </view>
+        <navigator url="">
+            <view class="coupons-text">
+                <text>我的优惠券</text>
+            </view>
+        </navigator>     
+    </view>
+    <view class="mine-F">
+        <view class="F-photo">
+            <image class="F" src="/images/Fma.png"></image>
+        </view>
+        <navigator url="">
+            <view class="F-text">
+                <text>我的F码</text>
+            </view>
+        </navigator>     
+    </view>
+    <view class="mine-set">
+        <view class="set-photo">
+            <image class="set" src="/images/shezhi.png"></image>
+        </view>
+        <navigator url="">
+            <view class="set-text">
+                <text>设置</text>
+            </view>
+        </navigator>
+    </view>
+</view>

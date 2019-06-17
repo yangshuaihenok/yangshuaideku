@@ -1,0 +1,270 @@
+/**index.wxss**/
+
+.head{
+  background-color: #ff6700;
+  position: relative;
+  overflow: hidden;
+}
+.head .head-search{
+  float: left;
+  height:60rpx;
+  width: 713rpx;
+  margin: 20rpx 20rpx 14rpx 20rpx;
+  background-color: #fff;
+  border-radius:25rpx;
+}
+.head-search-btn{
+  border-radius:25rpx;
+}
+.head-search-text{
+  position: relative;
+  left: 265.5rpx;
+}
+.head .head-search .head-search-photo{
+  position: relative;
+  top: 5rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+.head .head-search .head-search-word{
+  color:#aaa;
+  position: absolute;
+  line-height: 59.2rpx;
+  font-size: 30rpx;
+}
+
+/* 类型 */
+.type1{
+  position: relative;
+}
+.type .type1{
+  display: flex;
+}
+
+.type .type1 .phone{
+  display: inline-block;
+  flex:1;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  position: relative;
+  height: 64rpx;
+}
+.type .type1 .phone .phone-pic{
+  position: absolute;
+  width:60rpx;
+  height: 60rpx;
+  left: 45rpx;
+}
+.type .type1 .phone .phone-text{
+  position: absolute;
+  color: #515151;
+  font-size: 25rpx;
+  bottom: 0rpx;
+  left: 50rpx;
+}
+
+.type .type1 .tv{
+  display: inline-block;
+  flex:1;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  position: relative;
+  height: 64rpx;
+}
+.type .type1 .tv .tv-pic{
+  position: absolute;
+  width:60rpx;
+  height: 60rpx;
+  left: 45rpx;
+}
+.type .type1 .tv .tv-text{
+  position: absolute;
+  color: #515151;
+  font-size: 25rpx;
+  bottom: 0rpx;
+  left: 50rpx;
+}
+
+.type .type1 .computer{
+  display: inline-block;
+  flex:1;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  position: relative;
+  height: 64rpx;
+}
+.type .type1 .computer .computer-pic{
+  position: absolute;
+  width:60rpx;
+  height: 60rpx;
+  left: 45rpx;
+}
+.type .type1 .computer .computer-text{
+  position: absolute;
+  color: #515151;
+  font-size: 25rpx;
+  bottom: 0rpx;
+  left: 50rpx;
+}
+
+.type .type1 .smart{
+  display: inline-block;
+  flex: 1;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  position: relative;
+  height: 64rpx;
+}
+.type .type1 .smart .smart-pic{
+  position: absolute;
+  width:60rpx;
+  height: 60rpx;
+  left: 45rpx;
+}
+.type .type1 .smart .smart-text{
+  position: absolute;
+  color: #515151;
+  font-size: 25rpx;
+  bottom: 0rpx;
+  left: 50rpx;
+}
+
+.type .type1 .link{
+  display: inline-block;
+  flex: 1;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  position: relative;
+  height: 64rpx;
+}
+.type .type1 .link .link-pic{
+  position: absolute;
+  width:60rpx;
+  height: 60rpx;
+  left: 45rpx;
+}
+.type .type1 .link .link-text{
+  position: absolute;
+  color: #515151;
+  font-size: 25rpx;
+  bottom: 0rpx;
+  left: 42rpx;
+  text-align: center;
+}
+
+.type2{
+  position: relative;
+}
+.type .type2{
+  display: flex;
+}
+
+.type .type2 .new{
+  display: inline-block;
+  flex:1;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  position: relative;
+  height: 64rpx;
+}
+.type .type2 .new .new-pic{
+  position: absolute;
+  width:60rpx;
+  height: 60rpx;
+  left: 45rpx;
+}
+.type .type2 .new .new-text{
+  position: absolute;
+  color: #515151;
+  font-size: 25rpx;
+  bottom: 0rpx;
+  left: 50rpx;
+}
+
+.type .type2 .crowdfunding{
+  display: inline-block;
+  flex:1;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  position: relative;
+  height: 64rpx;
+}
+.type .type2 .crowdfunding .crowdfunding-pic{
+  position: absolute;
+  width:60rpx;
+  height: 60rpx;
+  left: 45rpx;
+}
+.type .type2 .crowdfunding .crowdfunding-text{
+  position: absolute;
+  color: #515151;
+  font-size: 25rpx;
+  bottom: 0rpx;
+  left: 27rpx;
+}
+
+.type .type2 .trade-in{
+  display: inline-block;
+  flex:1;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  position: relative;
+  height: 64rpx;
+}
+.type .type2 .trade-in .trade-in-pic{
+  position: absolute;
+  width:60rpx;
+  height: 60rpx;
+  left: 45rpx;
+}
+.type .type2 .trade-in .trade-in-text{
+  position: absolute;
+  color: #515151;
+  font-size: 25rpx;
+  bottom: 0rpx;
+  left: 27rpx;
+}
+
+.type .type2 .cent{
+  display: inline-block;
+  flex: 1;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  position: relative;
+  height: 64rpx;
+}
+.type .type2 .cent .cent-pic{
+  position: absolute;
+  width:60rpx;
+  height: 60rpx;
+  left: 45rpx;
+}
+.type .type2 .cent .cent-text{
+  position: absolute;
+  color: #515151;
+  font-size: 25rpx;
+  bottom: 0rpx;
+  left: 27rpx;
+}
+
+.type .type2 .day{
+  display: inline-block;
+  flex: 1;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  position: relative;
+  height: 64rpx;
+}
+.type .type2 .day .day-pic{
+  position: absolute;
+  width:60rpx;
+  height: 60rpx;
+  left: 45rpx;
+}
+.type .type2 .day .day-text{
+  position: absolute;
+  color: #515151;
+  font-size: 25rpx;
+  bottom: 0rpx;
+  left: 27rpx;
+}

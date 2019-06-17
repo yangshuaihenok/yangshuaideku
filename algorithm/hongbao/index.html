@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>抢随机红包算法</title>
+</head>
+<body>
+    <input type="text" id="money"/>
+    <script>
+    // getElementById() 方法可返回对拥有指定 ID 的第一个对象的引用
+    //addEventListener() 方法用于向文档添加事件句柄
+    document.getElementById("money")
+    .addEventListener('keydown',function(event){
+        if(event.keyCode==13){
+            console.log(this.value);
+            //parseFloat 将它的字符串参数解析成为浮点数并返回,
+            //除了科学记数法以外的字符（开头结尾的空格是允许的），则它会忽略该字符以及之后的所有字符，
+            //返回当前已取到的字符,如果第一个字符不能被解析 返回NaN
+            console.log(Math.ceil(parseFloat(this.value).toFixed(2)));
+            //Math.ceil()向上取整
+            //toFixed(n)四舍五入 精确到小数点后n位
+        }
+        console.log();
+
+    })
+//     const hongbao=(tital,num)=>{
+//     const arr=[];
+//     let restAmount=total,
+//      restNum =num ;
+//     for(let i=0;i<num-1;i++){
+//         let amount 
+//     }
+//     return arr;
+// }
+    </script>
+</body>
+</html>

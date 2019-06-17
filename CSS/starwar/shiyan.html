@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实验！</title>
+</head>
+
+<body>
+    <a  href="目标网址"  title="鼠标滑过显示的文本">链接显示的文本</a> <br>
+   
+    <p><a href="目标网址" target="_blank" title="鼠标滑过显示的文本">click here!</a></p>
+
+    <p><img src="./images/逆子.jpg" alt="下载失败时的替换文本" title = "提示文本"></p>
+
+    <p>1922年的春天，一个想要成名名叫卡拉威（马奎尔Tobey Maguire 饰）的作家，离开了美国中西部，来到了纽约。
+        那是一个道德感渐失，爵士乐流行，走私为王，股票飞涨的时代。为了追寻他的美国梦，他搬入纽约附近一海湾居住。</p>
+    <p>菲茨杰拉德，二十世纪美国文学巨擘之一，兼具作家和编剧双重身份。他以诗人的敏感和戏剧家的想象为"爵士乐时代"
+        吟唱华丽挽歌，其诗人和梦想家的气质亦为那个奢靡年代的不二注解。</p>
+    <a href="mailto:yy?imooc.com?subject=观了不起的盖茨比有感&body=你好，对此评论有些想法。">
+    对此影评有何感想，发送邮件给我</a>        
+                             <!-- 如果mailto后面同时有多个参数的话，第一个参数必须以“?”开头，后面的参数每一个都以“&”分隔。 -->
+        
+
+          <!-- form标签都是在body标签里                    -->
+    
+    <form action="./images/AD.jpg">
+       <label for="username">账号：</label>
+       <input type="text" name="username" value=""/><br>
+       <label for="password">密码：</label>
+       <input type="password" name="password" value=""/><br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+       <input type="submit" value="确定"  name="submit" />
+       &nbsp;&nbsp;&nbsp;
+       <input type="reset" value="重置" name="reset" /> 
+    </form> 
+    <form  method="post" action="save.php">
+        账户: 
+        <input type="text" name="username" value="">
+        <br>
+        密码: 
+        <input type="password" name="password" value=""><br>
+        <label>个人简介：</label>
+            <textarea cols="50" rows="10"  placeholder="请输入："></textarea> <br> 
+            <!--  placeholder="" 为文本输入框中设定默认值 当在网页输入文本时自动消失 -->
+    
+    <label>性别:</label>
+    <label>男</label>
+                     <!-- 当 type="radio" 时，控件为单选框   -->
+    <input type="radio" value="1"  name="gender-man" />                       
+     <label>女</label>                                          
+    <input type="radio" value="2"  name="gender-woman" />
+    <!-- 当 type="checkbox" 时，控件为复选框 -->
+    你喜欢运动吗 <br/>
+   <input type="radio" name="ridiolove" value="喜欢" />喜欢
+   <input type="radio" name="ridiolove" value="不喜欢" />不喜欢
+   <input type="radio" name="ridiolove" value="无所谓" />无所谓
+    对哪些运动感兴趣？<br/>
+    <input type="checkbox" name="checkbox1" value="跑步" />跑步
+    <input type="checkbox" name="checkbox2" value="登山" checked="checked" />登山
+    <input type="checkbox" name="checkbox3" value="游泳" checked="checked" />游泳
+    <input type="checkbox" name="checkbox4" value="打球" />打球<br/>
+    你对哪些运动感兴趣？<br/>
+    <label for="run">慢跑</label>
+    <input type="checkbox" name="check" id="run"><br>
+    <label for="mou">登山</label>
+    <input type="checkbox" name="check" id="mou"><br>
+    <label for="ball">篮球</label>
+    <input type="checkbox" name="check" id="ball"><br>
+</form>
+
+</body>
+</html>
