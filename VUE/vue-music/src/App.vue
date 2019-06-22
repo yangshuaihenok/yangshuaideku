@@ -12,7 +12,7 @@
   <v-tab></v-tab>
   <!-- keep-alive 保持上一个路由被操作的状态 -->
   <keep-alive>
-    <router-link ></router-link>
+    <router-view ></router-view>
   </keep-alive>
   <!-- 底部播放栏 -->
   <v-play></v-play>
@@ -26,6 +26,7 @@ import header from '@/components/header'
 import tab from '@/components/tab'
 import play from '@/components/play'
 import sidebar from '@/components/sidebar'
+
 export default {
   name: 'App',
   components:{
