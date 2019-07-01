@@ -1,51 +1,50 @@
 <template>
-    <div class="sidebar" :class="{showSidebar:showSidebar}"><!-- 冒号前面的是否显示取决于后面的值是否为真 -->
-        <div class="sidebar-con" :class="{showbar:showSidebar}">
+    <div class="sidebar" :class="{showSidebar: showSidebar}">
+        <div class="sidebar-con" :class="{showbar: showSidebar}">
             <div class="head">
                 <div class="avatar">
-                    <img src="https://tse2-mm.cn.bing.net/th?id=OIP.gHuIfBSv1zEYYmzEDf56UQAAAA&w=150&h=150&c=7&o=5&dpr=1.25&pid=1.7" alt="">
+                    <img src="http://p1-tt.bytecdn.cn/large/pgc-image/54b94f79a2ec4f09bc457137b35c3fb0" alt="" />
                 </div>
-                <div class="name">杨帅</div>
+                <div class="name"><span>杨帅</span></div>
             </div>
             <div class="menu">
                 <ul>
                     <li @click="_hidebar">
                         <router-link to="/user">
-                            <i class="icon">&#xe63c;</i>
-                            <span>个人中心</span>
+                        <i class="icon">&#xe63c;</i>
+                        <span>个人中心</span>
                         </router-link>
                     </li>
                     <li @click="_hidebar">
                         <router-link to="">
-                            <i class="icon">&#xe631;</i>
-                            <span>音效调整</span>
+                        <i class="icon">&#xe631;</i>
+                        <span>音效调整</span>
                         </router-link>
                     </li>
                     <li @click="_hidebar">
                         <router-link to="">
-                            <i class="icon">&#xe65b;</i>
-                            <span>定时关闭</span>
+                        <i class="icon">&#xe65b;</i>
+                        <span>定时关闭</span>
+                        </router-link>
+                    </li >
+                        <li @click="_hidebar">
+                        <router-link to="/user">
+                        <i class="icon">&#xe601;</i>
+                        <span>听歌识曲</span>
+                        </router-link>
+                    </li>
+                        <li @click="_hidebar">
+                        <router-link to="">
+                        <i class="icon">&#xe600;</i>
+                        <span>帮助</span>
                         </router-link>
                     </li>
                     <li @click="_hidebar">
                         <router-link to="">
-                            <i class="icon">&#xe601;</i>
-                            <span>听歌识曲</span>
+                        <i class="icon">&#xe61f;</i>
+                        <span>设置</span>
                         </router-link>
                     </li>
-                    <li @click="_hidebar">
-                        <router-link to="">
-                            <i class="icon">&#xe600;</i>
-                            <span>帮助</span>
-                        </router-link>
-                    </li>
-                    <li @click="_hidebar">
-                        <router-link to="">
-                            <i class="icon">&#xe61f;</i>
-                            <span>设置</span>
-                        </router-link>
-                    </li>
-
                 </ul>
             </div>
         </div>
@@ -54,25 +53,27 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters } from 'vuex'    //mapGetters可以把getters里的东西全部解构出来
 export default {
-    data() {
+    data () {
         return {
         }
     },
-    methods:{
-        _hidebar(){
-            this.$store.dispatch('setShowSidebar',false)
-        }
-    },
-    computed: {
+    computed:{
         ...mapGetters([
-            'showSidebar'
+            "showSidebar"          //拿到了showSidebar这条数据
         ])
     },
+    methods:{
+        _hidebar () {
+            this.$store.dispatch('setShowSidebar',false)                                //这里能用是因为在main.js里引入了store并且在Vue的实例上挂载了store所以能使用 dispatch 调用actions里的方法
+        },
+        _show () {
+            this.$store.dispatch('setShowSidebar',true)
+        }
+    }
 }
 </script>
-
 
 <style lang="stylus" scoped>
 @import "../assets/css/function"
@@ -99,8 +100,8 @@ export default {
       text-align center
       .avatar 
         width px2rem(90px)
-        height px2rem(90px)
-        background #f1f1f1
+        height 2.4rem
+        // background #f1f1f1
         border-radius 50%
         margin px2rem(60px) auto px2rem(15px)
         img 
@@ -146,5 +147,3 @@ export default {
     z-index 1001
     background rgba(0, 0, 0, 0.4)
 </style>
-
-

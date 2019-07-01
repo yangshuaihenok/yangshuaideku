@@ -2,19 +2,18 @@
   <div id="app">
   <!-- 头部header -->
   <v-header>
-    <i slot="left-icon" class="icon">&#xe692;</i>
+    <i slot="left-icon" class="icon">&#xe692;</i> <!-- icon的字体 -->
     <span slot="content">Magic Music</span>
     <router-link to="/user" slot="right-icon">
-      <i class="icon">&#xe63c;</i>
+    <i class="icon">&#xe63c;</i>
     </router-link>
   </v-header>
   <!-- tab -->
   <v-tab></v-tab>
-  <!-- keep-alive 保持上一个路由被操作的状态 -->
-  <keep-alive>
-    <router-view ></router-view>
+  <keep-alive>     <!-- 保存上一个路由组件停留的状态 -->
+     <router-view></router-view>
   </keep-alive>
-  <!-- 底部播放栏 -->
+  <!-- play -->
   <v-play></v-play>
   <!-- sidebar -->
   <v-sidebar></v-sidebar>
@@ -24,24 +23,26 @@
 <script>
 import header from '@/components/header'
 import tab from '@/components/tab'
-import play from '@/components/play'
 import sidebar from '@/components/sidebar'
+import play from '@/components/play'
+
+
 
 export default {
   name: 'App',
   components:{
     "v-header":header,
     "v-tab":tab,
-    "v-play":play,
-    "v-sidebar":sidebar
+    "v-sidebar":sidebar,
+    "v-play":play
   },
  
 }
 </script>
 
 <style lang="stylus">
-@import "./assets/css/function" 
-@font-face 
+@import "./assets/css/function"
+@font-face
   font-family "icon"
   src url("//at.alicdn.com/t/font_kmywdojzhchj8aor.eot")
   src url("//at.alicdn.com/t/font_kmywdojzhchj8aor.eot?#iefix") format("embedded-opentype"),
@@ -57,7 +58,11 @@ html,body
   line-height 1
   font-family PingFang SC, STHeitiSC-Light, Helvetica-Light, arial, sans-serif
   user-select none
-  --webkit-tap-highlight-color transparent 
+  -webkit-tap-highlight-color transparentify
   background rgba(8,5,58,0.9)
   color #fff
+
+
+
+
 </style>

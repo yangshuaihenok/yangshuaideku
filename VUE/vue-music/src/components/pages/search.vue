@@ -2,20 +2,17 @@
     <div class="search">
         <div class="search-box-wrapper">
             <!-- 搜索框 -->
-            <v-search-box @query="onQueryChange"></v-search-box>
+            <v-search @query="onQueryChange" ref="searchBox"></v-search>
+            <!-- 子组件抛出的方法 query -->
         </div>
         <div class="shortcut-wrapper" ref="shortcutWrapper" v-show="!query">
-            <v-scroll class="shortcut" ref="shortcut" :data="shortcut" :refreshDelay="refreshDelay">
-                <div class="">
-                    <!-- 热门搜索 -->
+            <!-- 热门搜索 -->
+            <v-scroll class="shortcut" :data="shortcut" :refreshDelay="refreshDelay">
+                <div>
                     <div class="hot-key">
                         <h1 class="title">热门搜索</h1>
                         <ul>
-                            <li class="item"
-                            v-for="(item,index) in hotKey"
-                            :key="index"
-                            @click="addQuery(item.first)"
-                            >
+                            <li class="item" v-for="(item,index) in hotKey" :key="index" @click="addQuery(item.first)">
                                 <span>{{item.first}}</span>
                             </li>
                         </ul>
@@ -29,50 +26,65 @@
                             </span>
                         </h1>
                         <!-- 搜索历史列表 -->
-                        <v-searchlist></v-searchlist>
+                        <v-searchList :searches="searchHistory" @select="addQuery"></v-searchList>
                     </div>
                 </div>
             </v-scroll>
+
         </div>
         <!-- 搜索结果 -->
         <div class="search-result" v-show="query" ref="searchResult">
-            <v-suggest :query="query"></v-suggest>
+            <v-suggest :query="query" @listScroll="blurInput" @select="saveSearch" ref="suggest"></v-suggest>
         </div>
     </div>
 </template>
 
 <script>
-import searchBox from '../searchBox'
-import scroll from '../scroll'
-import searchList from '../searchList'
-import suggest from '../suggest'
+import searchBox from '@/components/searchBox'
+import scroll from '@/components/scroll'
+import searchList from '@/components/searchList'
+import suggest from '@/components/suggest'
+import api from '@/api'
+import { mapGetters } from 'vuex'
+import { searchMixin } from '@/common/mixin.js'
+
 export default {
-    data() {
-        return {
-            shortcut:[],
-            refreshDelay:2,
-            query:'',
-            searchHistory:'assa',
-            hotKey:[
-                {first:'aaaa'},
-                {first:'bbbbbbbbbbb'},
-                {first:'ccccccccccccccccccccc'},
-                {first:'ddddddd'}
-            ]
-        }
-    },
-    methods: {
-        showConfirm(){},
-        onQueryChange(query){
-            // console.log(query)
-            this.query = query
-        }
-    },
     components:{
-        'v-search-box':searchBox,
-        'v-scroll':scroll,
-        'v-searchlist':searchList,
-        'v-suggest':suggest
+        "v-search":searchBox,
+        "v-scroll":scroll,
+        "v-searchList":searchList,
+        "v-suggest":suggest
+    },
+    mixins:[searchMixin],     //mixins vue自带的  来扩展一个方法
+    data () {
+        return {
+            
+            hotKey:[]
+        }
+    },
+    methods:{
+        showConfirm () {
+
+        },
+        _getHotKey () {
+            api.HotSearchKey().then((res) => {
+                if(res.code === 200) {
+                    this.hotKey = res.result.hots.slice(0,10)
+                }
+            })
+        },
+    },
+    created () {
+        this._getHotKey()
+        
+    },
+    computed:{
+        shortcut () {
+
+        },
+        
+        
+            
     }
 }
 </script>
@@ -89,14 +101,14 @@ export default {
         bottom 0
         width 100%
         .shortcut
-            height 100%
+            width 100%
             overflow hidden
             .hot-key
                 margin 0 px2rem(40px) px2rem(40px) px2rem(40px)
                 .title
                     margin-bottom px2rem(40px)
-                    font-size 13px
                     color hsla(0,0%,100%,0.5)
+                    font-size 14px
                 .item
                     display inline-block
                     padding px2rem(10px) px2rem(20px)

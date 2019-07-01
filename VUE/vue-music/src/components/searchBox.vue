@@ -15,32 +15,32 @@ export default {
             default:'搜索歌曲、歌手'
         }
     },
-    data(){
-        return{
+    data () {
+        return {
             query:''
         }
     },
     methods:{
-        clear(){
-            this.query=''
+        clear () {
+            this.query = ''
         },
-        setQuery(query){
+        setQuery (query) {
             this.query = query
         },
-        blur(){
-            this.$ref.query.blur()
+        blur () {
+            this.$ref.query.blur()  //失去焦点
         }
     },
-    created() {
-        this.$watch('query',debounce((newQuery)=>{
+    created () {
+        this.$watch('query',debounce((newQuery) => {
             this.$emit('query',newQuery)
         }))
-    },
+    }
 }
 </script>
 
 <style lang="stylus" scoped>
-    @import '../assets/css/function'
+@import '../assets/css/function'
 .search-box 
   display flex
   align-items center

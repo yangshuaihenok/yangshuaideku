@@ -14,38 +14,41 @@
 <script>
 export default {
     props:{
-        searches:{
-            type:Array,
-            default:['素颜','清明雨上']
-        }
+          searches:{
+              type:Array,
+              default:[]
+          }
     },
-    methods: {
-        selectItem(){
-
+    methods:{
+        selectItem (item) {
+          this.$emit('select',item)
         }
-    },
+    }
 }
 </script>
-
 
 <style lang="stylus" scoped>
 .search-list 
   .search-item 
     display flex
     align-items center
-    height 32px
+    height 40px
     overflow hidden
     &.list-enter-active, &.list-leave-active 
       transition all 0.1s
+    
+
     &.list-enter, &.list-leave-to 
       height 0
+    
+
     .text 
       flex 1
       color hsla(0,0%,100%,.5)
+    
+
     .icon-box 
       .icon 
         font-size 18px
         color hsla(0,0%,100%,.3)
 </style>
-
-
