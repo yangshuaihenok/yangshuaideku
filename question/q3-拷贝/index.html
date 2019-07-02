@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- js中的浅拷贝和深拷贝 -->
+    <!-- <script>
+        //解构
+        // function example(){
+        //     return [1,2,3]
+        // }
+        // let b = example()[0]
+        // console.log(b)
+
+        // let [a,b,c] = example()
+        // console.log(c)
+        // let [x,y] = [1,2]
+
+        // 对象的解构
+        // le{foo,bar} = {foo:'aaa',bar:'bbb'} // key值要对应
+        // let {foo:baz} = {foo:'abc'}  // console.log(baz)才能输出 abc
+    </script> -->
+    <script>
+        //浅拷贝
+        // let obj = {
+        //     name:'蔡徐坤',
+        //     age:22,
+        //     like:['唱','跳','rap']
+        // }
+        // // let obj2 = Object.assign({},obj)
+        // // obj.name = '练习生'
+        // // obj.like.push('篮球')
+        // // console.log(obj2)
+        // // let obj3 = {...obj}
+        // // console.log(obj3)
+
+        // // 深拷贝
+        // let obj4 = JSON.parse(JSON.stringify(obj))  // 转为数组 再转回对象
+        // obj.name = '练习生'
+        // obj.like.push('篮球')
+        // console.log(obj4)
+        // console.log(obj)
+        
+
+        // 深拷贝的原理
+        function deepClone (obj,hash = new WeakMap()){
+            // 递归拷贝
+            if(obj instanceof RegExp){
+                return RegExp(obj)
+            }
+            if(obj instanceof Date){
+                return Date(obj)
+            }
+            if(obj === null || typeof obj !== 'object'){
+                // 如果不是复杂数据类型，直接返回
+                return obj
+            }
+            if(hash.has(obj)){
+                return hash.get(obj)
+            }
+            //如果obj 是数组，那么obj.constructor(构造函数) 是一个 [function:Array]
+            // 如果obj是对象，那么obj.constructor  是一个 [function:Object]
+            let t = new obj.constructor()
+            hash.set(obj,t)
+            for(let key in obj){
+                //递归
+                if(obj.hasOwnProperty(key)){  // 判断key 是否为obj自身的属性
+                    t[key] = deepClone(obj[key],hash)
+                }
+            }
+            return t
+        }
+    </script>
+</body>
+</html>
