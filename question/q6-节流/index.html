@@ -36,14 +36,14 @@
             }
         }
 
-        const oDebounce = debounce(() => test(),3000)
+        const oDebounce = debounce((q,a)=>test(q,a),3000)
 
-        function test(){
-            console.log('提交成功')
+        function test(q,a){
+            console.log('提交成功',q,a)
         }
         let osubmit = document.getElementById('submit')
         osubmit.addEventListener('click',function(){
-            oDebounce()
+            oDebounce('11','22')
         })
 
         

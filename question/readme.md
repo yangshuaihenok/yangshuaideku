@@ -46,3 +46,10 @@
 
 # 六  防抖节流
     
+
+# 七  判断数据类型及原理
+    typeof 判断简单数据类型   let a = 'hello', b = 123,c = true,d = undefined,e = null,
+    instanceof 判断复杂数据类型  f = {}, g = [], h = function(){}
+
+    instance的原理： __proto__是每一个实例都有的属性，可以访问[prototype]属性，实例的__proto__与其
+                    构造函数的prototype指向的是同一对象
