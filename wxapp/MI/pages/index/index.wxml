@@ -20,7 +20,7 @@
     </swiper>
   </view>
   <view class="type">
-    <view class="type1">
+    <!-- <view class="type1">
       <view class="phone">
         <navigator url="">
           <image src="/images/shouji.png" class="phone-pic"></image>
@@ -83,7 +83,44 @@
           <text class="day-text">每日臻选</text>
         </navigator>
       </view>
+    </view> -->
+    <view class="items" wx:for="{{icons}}" wx:key="{{index}}">
+        <navigator url="{{item.url}}">
+          <image src="{{item.src}}" class="phone-pic"></image>
+          <text class="phone-text">{{item.name}}</text>
+        </navigator>
+      </view>
+  </view>
+  <view class="product">
+    <view class="recommend">
+      <view class='rec-text'>人气推荐</view>
+
+      <navigator url="">
+        <view class='rec-1' >
+          <image src='' class=''></image>
+          <view class='rec-1-name'></view>
+          <view class='rec-1-int'></view>
+          <view class='rec-1-price'></view>
+        </view>
+      </navigator>
+
+      <navigator url="">
+        <view class='rec-2'>
+          <image src='' class=''></image>
+          <view class='rec-2-name'></view>
+          <view class='rec-2-int'></view>
+          <view class='rec-2-price'></view>
+        </view>
+      </navigator>
+
+      <navigator url="">
+        <view class='rec-3'>
+          <image src='' class=''></image>
+          <view class='rec-3-name'></view>
+          <view class='rec-3-int'></view>
+          <view class='rec-3-price'></view>
+        </view>
+      </navigator>
     </view>
   </view>
-  <view class="product"></view>
 </view>

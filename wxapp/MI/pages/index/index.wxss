@@ -34,7 +34,7 @@
 }
 
 /* 类型 */
-.type1{
+/* .type1{
   position: relative;
 }
 .type .type1{
@@ -267,4 +267,29 @@
   font-size: 25rpx;
   bottom: 0rpx;
   left: 27rpx;
+} */
+
+.type{
+  width: 100%;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  
+}
+.items{
+  display: inline-block;
+  width: 20%;
+}
+.items image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.items text{
+  color: #515151;
+  font-size: 25rpx;
+  line-height: 30rpx;
+  display: block;
+}
+/* 产品 */
+.product{
+  background-color: #ededed;
 }

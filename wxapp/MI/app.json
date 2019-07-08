@@ -4,7 +4,9 @@
     "pages/mine/mine",
     "pages/cart/cart",
     "pages/class/class",
-    "pages/find/find"
+    "pages/find/find",
+    "pages/aaa/aaa",
+    "pages/bbb/bbb"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -16,10 +18,10 @@
     "selectedColor": "#e0620d",
     "list": [
       {
-        "pagePath":"pages/index/index",
-        "iconPath":"/images/shouye.png",
-        "selectedIconPath":"/images/shouye1.png",
-        "text":"首页"
+        "pagePath": "pages/index/index",
+        "iconPath": "/images/shouye.png",
+        "selectedIconPath": "/images/shouye1.png",
+        "text": "首页"
       },
       {
         "pagePath": "pages/class/class",

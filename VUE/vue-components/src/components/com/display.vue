@@ -23,7 +23,7 @@ export default {
     },
     methods: {
         getSource(source,type){
-            const regex = new RegExp(`<${type}>[^>]*>`)
+            const regex = new RegExp(`<${type}[^>]*>`)
             let openingTag = source.match(regex)
 
             if(!openingTag){
