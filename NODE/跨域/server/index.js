@@ -18,6 +18,7 @@ app.use(async (ctx, next) => {
   ctx.set('Access-Control-Allow-Credentials', true)
   await next();
 })
+// 获取端口 /api/post
 router.get('/api/post', async function (ctx) {
   console.log('cookie', ctx.cookies.get('name'));
   ctx.body = [
@@ -25,6 +26,13 @@ router.get('/api/post', async function (ctx) {
     { title: 'php 入门到精通', createTime: '2018-11-11' },
   ]
 });
+router.get('/api/jsonp',async (ctx)=>{
+  const cb = ctx.request.query.callback;
+  const person = {
+    name:'name111',age:12323
+  }
+  ctx.body=`${cb}(${JSON.stringify(person)})`
+})
 app
   .use(router.routes())
   .use(router.allowedMethods());

@@ -23,4 +23,20 @@
 ## iframe + window.name
     iframe共享window.name
 
+    没有postMessage这个api 只能借助中间页面 通知前端页面  window.parent.callback(window.name)
+
 ## jsonp
+    1. 定义一个回调
+    2. 将回调函数名 告诉后端 后端会返回
+      ```js
+      回调(res)
+      ```
+    3. script标签 加载过后 执行返回的内容
+
+    4. 缺点：只发起get请求
+
+写一个jsonp 的函数，以promise的方式调用
+jsonp(url)
+.then(res => {
+
+})
