@@ -1,4 +1,4 @@
-function bubbleSort (arr){
+function selectSort (arr){
     var len = arr.length;
     var minIndex,temp;
     // for (let i=0;i<len-1;i++){
@@ -23,5 +23,5 @@ function bubbleSort (arr){
     }
     return arr;
 }
-console.log(bubbleSort([5,1,3,8,9,4,5]))
+console.log(selectSort([5,1,3,8,9,4,5]))
 

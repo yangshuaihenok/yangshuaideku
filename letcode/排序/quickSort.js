@@ -11,6 +11,6 @@ function quickSort(arr){
         }
     }
 
-    return quickSort(left).concat([base],quickSort(right));// concat 拼接
+    return quickSort(left).concat([base],quickSort(right));  // concat 拼接
 }
 console.log(quickSort([1,32,3,6,86,25,744]))

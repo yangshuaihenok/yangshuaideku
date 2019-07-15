@@ -14,113 +14,148 @@
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" indicator-color="#8a8a8a" indicator-active-color="#e6e6e6">
       <block wx:for="{{imgUrls}}" wx:key="{{id}}">
         <swiper-item>
-          <image src="{{item}}" class="slide-image" style='width:100%;height:100%' />
+          <image src="{{item}}" class="slide-image"  />
         </swiper-item>
       </block>
     </swiper>
   </view>
   <view class="type">
-    <!-- <view class="type1">
-      <view class="phone">
-        <navigator url="">
-          <image src="/images/shouji.png" class="phone-pic"></image>
-          <text class="phone-text">手机</text>
-        </navigator>
-      </view>
-      <view class="tv">
-        <navigator url="">
-          <image src="/images/dianshi.png" class="tv-pic"></image>
-          <text class="tv-text">电视</text>
-        </navigator>
-      </view>
-      <view class="computer">
-        <navigator url="">
-          <image src="/images/diannao.png" class="computer-pic"></image>
-          <text class="computer-text">电脑</text>
-        </navigator>
-      </view>
-      <view class="smart">
-        <navigator url="">
-          <image src="/images/zhineng.png" class="smart-pic"></image>
-          <text class="smart-text">智能</text>
-        </navigator>
-      </view>
-      <view class="link">
-        <navigator url="">
-          <image src="/images/shengtailian.png" class="link-pic"></image>
-          <text class="link-text">生态链</text>
-        </navigator>
-      </view>
+    <view class="items" wx:for="{{lists}}" wx:key="{{index}}">
+      <navigator url="{{item.url}}">
+        <image src="{{item.src}}" class="phone-pic"></image>
+        <text class="phone-text">{{item.name}}</text>
+      </navigator>
     </view>
-    <view class="type2">
-      <view class="new">
-        <navigator url="">
-          <image src="/images/xinpin.png" class="new-pic"></image>
-          <text class="new-text">新品</text>
-        </navigator>
-      </view>
-      <view class="crowdfunding">
-        <navigator url="">
-          <image src="/images/zhongchou.png" class="crowdfunding-pic"></image>
-          <text class="crowdfunding-text">小米众筹</text>
-        </navigator>
-      </view>
-      <view class="trade-in">
-        <navigator url="">
-          <image src="/images/huanxin.png" class="trade-in-pic"></image>
-          <text class="trade-in-text">以旧换新</text>
-        </navigator>
-      </view>
-      <view class="cent">
-        <navigator url="">
-          <image src="/images/pintuan.png" class="cent-pic"></image>
-          <text class="cent-text">一分拼团</text>
-        </navigator>
-      </view>
-      <view class="day">
-        <navigator url="">
-          <image src="/images/zhenxuan.png" class="day-pic"></image>
-          <text class="day-text">每日臻选</text>
-        </navigator>
-      </view>
-    </view> -->
-    <view class="items" wx:for="{{icons}}" wx:key="{{index}}">
-        <navigator url="{{item.url}}">
-          <image src="{{item.src}}" class="phone-pic"></image>
-          <text class="phone-text">{{item.name}}</text>
-        </navigator>
-      </view>
   </view>
   <view class="product">
     <view class="recommend">
       <view class='rec-text'>人气推荐</view>
-
       <navigator url="">
-        <view class='rec-1' >
-          <image src='' class=''></image>
-          <view class='rec-1-name'></view>
-          <view class='rec-1-int'></view>
-          <view class='rec-1-price'></view>
+        <view class='rec-1'>
+          <image src='/images/shouhuan.jpg' class='wristband'></image>
+          <view class='rec-1-text'>
+            <view class='text-name'>小米手环4</view>
+            <view class='text-int'>
+              看微信/看来电/测心率/测睡眠/ 戴上它，你的生活从此改变。
+            </view>
+            <view class='text-price'>169元起</view>
+          </view>
         </view>
       </navigator>
-
-      <navigator url="">
-        <view class='rec-2'>
-          <image src='' class=''></image>
-          <view class='rec-2-name'></view>
-          <view class='rec-2-int'></view>
-          <view class='rec-2-price'></view>
-        </view>
-      </navigator>
-
-      <navigator url="">
-        <view class='rec-3'>
-          <image src='' class=''></image>
-          <view class='rec-3-name'></view>
-          <view class='rec-3-int'></view>
-          <view class='rec-3-price'></view>
-        </view>
-      </navigator>
+      <view class='rec-2'>
+        <navigator url="">
+          <image src='/images/mi3s.jpg' class='rec-2-img'></image>
+          <view class='rec-2-text'>
+            <view class='text-name'>小米电视3s</view>
+            <view class='text-int'>
+              FHD全高清/人工智能语音/大储存/高性能/海量内容/钢琴烤漆
+            </view>
+            <view class='text-price'>1399元<span>1999元</span></view>
+          </view>
+        </navigator>
+      </view>
+      <view class='rec-3'>
+        <navigator url="">
+          <image src='/images/kongtiao.jpg' class='rec-3-img'></image>
+          <view class='rec-3-text'>
+            <view class='text-name'>小米空调</view>
+            <view class='text-int'>
+              1.5匹/全直流变频/高效制冷热/智能控频/售后无忧/官网购买，免预约安装
+            </view>
+            <view class='text-price'>2399元<span>2999元</span></view>
+          </view>
+        </navigator>
+      </view>
+      <view class='rec-2'>
+        <navigator url="">
+          <image src='/images/mi3s.jpg' class='rec-2-img'></image>
+          <view class='rec-2-text'>
+            <view class='text-name'>小米电视3s</view>
+            <view class='text-int'>
+              FHD全高清/人工智能语音/大储存/高性能/海量内容/钢琴烤漆
+            </view>
+            <view class='text-price'>1399元<span>1999元</span></view>
+          </view>
+        </navigator>
+      </view>
+      <view class='rec-3'>
+        <navigator url="">
+          <image src='/images/kongtiao.jpg' class='rec-3-img'></image>
+          <view class='rec-3-text'>
+            <view class='text-name'>小米空调</view>
+            <view class='text-int'>
+              1.5匹/全直流变频/高效制冷热/智能控频/售后无忧/官网购买，免预约安装
+            </view>
+            <view class='text-price'>2399元<span>2999元</span></view>
+          </view>
+        </navigator>
+      </view>
     </view>
   </view>
+  <view class="product">
+    <view class="recommend">
+      <view class='rec-text'>猜你喜欢</view>
+      <navigator url="">
+        <view class='rec-1'>
+          <image src='/images/shouhuan.jpg' class='wristband'></image>
+          <view class='rec-1-text'>
+            <view class='text-name'>小米手环4</view>
+            <view class='text-int'>
+              看微信/看来电/测心率/测睡眠/ 戴上它，你的生活从此改变。
+            </view>
+            <view class='text-price'>169元起</view>
+          </view>
+        </view>
+      </navigator>
+      <view class='rec-2'>
+        <navigator url="">
+          <image src='/images/mi3s.jpg' class='rec-2-img'></image>
+          <view class='rec-2-text'>
+            <view class='text-name'>小米电视3s</view>
+            <view class='text-int'>
+              FHD全高清/人工智能语音/大储存/高性能/海量内容/钢琴烤漆
+            </view>
+            <view class='text-price'>1399元</view>
+          </view>
+        </navigator>
+      </view>
+      <view class='rec-3'>
+        <navigator url="">
+          <image src='/images/kongtiao.jpg' class='rec-3-img'></image>
+          <view class='rec-3-text'>
+            <view class='text-name'>小米空调</view>
+            <view class='text-int'>
+              1.5匹/全直流变频/高效制冷热/智能控频/售后无忧/官网购买，免预约安装
+            </view>
+            <view class='text-price'>2399元</view>
+          </view>
+        </navigator>
+      </view>
+      <view class='rec-2'>
+        <navigator url="">
+          <image src='/images/mi3s.jpg' class='rec-2-img'></image>
+          <view class='rec-2-text'>
+            <view class='text-name'>小米电视3s</view>
+            <view class='text-int'>
+              FHD全高清/人工智能语音/大储存/高性能/海量内容/钢琴烤漆
+            </view>
+            <view class='text-price'>1399元</view>
+          </view>
+        </navigator>
+      </view>
+      <view class='rec-3'>
+        <navigator url="">
+          <image src='/images/kongtiao.jpg' class='rec-3-img'></image>
+          <view class='rec-3-text'>
+            <view class='text-name'>小米空调</view>
+            <view class='text-int'>
+              1.5匹/全直流变频/高效制冷热/智能控频/售后无忧/官网购买，免预约安装
+            </view>
+            <view class='text-price'>2399元</view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <view class='slogan'>始终做感动人心，价格厚道的好产品！</view>
 </view>

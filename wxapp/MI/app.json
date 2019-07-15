@@ -4,9 +4,7 @@
     "pages/mine/mine",
     "pages/cart/cart",
     "pages/class/class",
-    "pages/find/find",
-    "pages/aaa/aaa",
-    "pages/bbb/bbb"
+    "pages/find/find"
   ],
   "window": {
     "backgroundTextStyle": "light",
