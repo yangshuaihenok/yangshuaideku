@@ -85,6 +85,7 @@
 }
 .product .recommend .rec-1 .wristband{
   width: 100%;
+  height: 400rpx;
 }
 .product .recommend .rec-1 .rec-1-text{
   padding: 20rpx;
