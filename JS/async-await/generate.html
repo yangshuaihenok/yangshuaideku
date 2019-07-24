@@ -104,7 +104,8 @@
                 if(info.done){
                     resolve();
                 }else{
-                    return Promise.resolve(info.value).then((v)=>{
+                    return Promise.resolve(info.value)
+                    .then((v)=>{
                         return step('next',v)
                     })
                 }
