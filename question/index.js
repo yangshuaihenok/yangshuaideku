@@ -50,6 +50,7 @@
 
 
 // for(var i = 0;i<10;i++){
+//    // console.log(i)
 //     (function(i){
 //         setTimeout(() => {
 //             console.log(i) 
@@ -83,15 +84,24 @@
 let gArr = [1,2,[3,4],5,[2,4,5,[3,4]]]
 // 1 2 3 4 5 2 4 5 3 4  
 
+// 1
+// function output(arr){
+//     let res = []
+//     for(let i = 0;i<arr.length;i++){
+//         if(Array.isArray(arr[i])){  //判断arr[i]是否为数组
+//             res = res.concat(output(arr[i]))
+//         }else{
+//             res.push(arr[i])
+//         }
+//     }
+//     return res
+// }
+// console.log(output(gArr))
+
+// 2
 function output(arr){
-    let res = []
-    for(let i = 0;i<arr.length;i++){
-        if(Array.isArray(arr[i])){
-            res = res.concat(output(arr[i]))
-        }else{
-            res.push(arr[i])
-        }
-    }
-    return res
+    return arr.reduce(function(pre,item){
+        return pre.concat(Array.isArray(item) ? output(item) : item)
+    },[])
 }
 console.log(output(gArr))

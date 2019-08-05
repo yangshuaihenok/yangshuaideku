@@ -5,10 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    receiverName: "张三",
-    mobile: "15770768970",
-    addressDetail: "上海市奉贤区",
-    postCode: "336600",
+    receiverName: "杨帅",
+    mobile: "1888888888",
+    addressDetail: "江西省南昌市",
+    postCode: "000000",
     isDisabled: false,
     isComplete: false,
     buttonTitle: "保存"

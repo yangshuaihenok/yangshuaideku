@@ -6,9 +6,9 @@
                 <image src="../../assets/icons/avatar.jpg"></image>
             </view>
             <view class="weui-cell__bd">
-                <view class="name">云中玉卷</view>
+                <view class="name">杨帅</view>
                 <view class="account" bindtap="bindAccount">
-                    绑定小米账号
+                    绑定账号
                 </view>
             </view>
             <view class="weui-cell__ft">

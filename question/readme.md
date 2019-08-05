@@ -53,3 +53,56 @@
 
     instance的原理： __proto__是每一个实例都有的属性，可以访问[prototype]属性，实例的__proto__与其
                     构造函数的prototype指向的是同一对象
+
+
+# url长度的限制
+    HTTP协议并没有限制url的长度，是浏览器或者web浏览器做了Url 长度的限制，并且只针对于get请求做的限制
+# get post请求
+  - 在缓存方法上的区别
+    get请求类似查找的过程，用户获取数据，可以不用每次都与数据库链接，所以可以使用缓存
+    post 不同，post一般做的是修改和删除数据的工作，所以必须与数据库交互，所以不能使用缓存
+
+
+# 前端数据流
+    在dom标准的事件模型中，事件流包括下面几个阶段：
+        事件捕获阶段
+        处于目标阶段
+        事件冒泡阶段
+    addEventListener第三个参数，为true时捕获，false时冒泡，默认是false （IE 只支持事件冒泡）
+
+
+# 懒加载 预加载
+    预加载：提前加载图片，当用户需要查看图片时可以直接从本地缓存中渲染
+    懒加载：最为服务器的前端优化，减少请求或延迟请求
+    （懒加载对服务器有一定的缓解压力作用，预加载则会增加服务器的压力）
+
+
+# js 中的各种位置
+    clienHeight: 表示可视区域的高度，不包含border和滚动条
+    offsetHeight：表示可视区域的高度，包含border和滚动条
+    scrollHeight：表示所有区域的高度，包含因为滚动被隐藏的部分
+    clienTop：表示边框border的厚度，在未指定的情况下一般的为0 
+    scrollTop：滚动后被隐藏的高度
+
+
+# js拖拽功能的实现
+    通过mousedown mousemove mouseup 原生方法计算鼠标移动的 X Y 坐标，再赋予需要拖拽的绝对位置 实现
+
+# 类的创建于与继承
+
+
+# click在ios手机上有300ms的延迟  原因及解决方案
+    1.<meta name="viewport" content="width=device-width, initial-scale=no">
+    2.FastClick,第三方脚本,原理：监测到touchend事件后，立刻发出模拟click事件，并把浏览器300ms之后真实发生的事件阻断
+
+
+# cookie sessionStorage localStorage的区别
+    cookie: 数据始终会在同源的HTTP请求中携带（即使不需要），即cookie在浏览器和服务器之间来回传递
+        而sessionStorage和localStorage 不会自动把数据发给服务器仅在本地保存
+        cookie还有路径（path）概念，可以限定cookie只属于某个路径下
+        cookie存储大小只有4kb左右
+
+    sessionStorage：仅在当前浏览器窗口关闭前有效，不能长久保存
+
+    localStorage：在所有的同源窗口都是共享的，cookie也是
+        缓存大小在5M左右

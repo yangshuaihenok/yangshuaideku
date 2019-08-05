@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const people = new Set();//自带构造函数
+        people.add('wes');
+        people.add('snicker');
+        people.add('kait');
+        people.add('kait');
+        for(let peoples of people){
+            console.log(peoples)
+        }
+        var o = {
+            prop: 37,
+                f: function() {
+                    return this.prop;
+                }
+        };
+        console.log(o)
+    </script>
+</body>
+</html>
